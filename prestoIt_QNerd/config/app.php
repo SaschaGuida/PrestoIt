@@ -16,7 +16,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Presto.it'),
 
     /*
     |--------------------------------------------------------------------------
@@ -154,12 +154,21 @@ return [
     | this array to grant expanded functionality to your applications.
     |
     */
+    'providers' => [
+        // ...
+        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
+    ],
+    'providers' => [
+        // ...
+        Laravel\Scout\ScoutServiceProvider::class,
+    ],
 
+    
     'providers' => ServiceProvider::defaultProviders()->merge([
         /*
          * Package Service Providers...
          */
-
+        App\Providers\FortifyServiceProvider::class,
         /*
          * Application Service Providers...
          */
